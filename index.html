@@ -3,7 +3,97 @@
  <head>
   <meta content="text/html; charset=utf-8">
   <title>ИОТ</title>
+  <script type="text/javascript">
+    mybutton = document.getElementById("top");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+  <script>
+  var dost = 1;
+  function add_fields() {
+      dost++;
+      var objTo = document.getElementById('container')
+      var divtest = document.createElement("div");
+      divtest.innerHTML = '<div><p style="margin-left: 10px;">Достижение ' + dost +':</p><p class="napr">\<select required="required">\
+      <option selected disabled>Направление деятельности</option>\
+      <option>Социально-гуманитарная</option>\
+      <option>Естественнонаучная</option>\
+      <option>Художественная</option>\
+      <option>Физкультурно-спортивная</option>\
+      <option>Туристско-краеведческая</option>\
+      <option>Техническая</option></select>\
+      <label for="napr">Направление деятельности <b style ="color: red">*</b></label>\
+      </p>\
+      <p class="vid">\
+      <select required="required">\
+        <option selected disabled>Вид деятельности</option>\
+        <option>Секция</option>\
+        <option>Кружок</option>\
+        <option>Факультатив</option>\
+        <option>Конференция</option>\
+        <option>Школьное научное сообщество</option>\
+        <option>Олимпиада</option>\
+        <option>Соревнование, состязание, научная игра</option>\
+        <option>Поисковые и научные исследования</option>\
+        <option>Общественно полезные практики</option>\
+        <option>Онлайн-курсы</option>\
+        <option>Клуб (военно-патриотический клуб, например)</option>\
+        <option>Творческое объединение (ансамбль, творческий коллектив и прочее)</option>\
+      </select>\
+      <label for="vid">Вид деятельности <b style ="color: red">*</b></label>\
+      </p>\
+      <p class="period">\
+      <input type="text" name="period" value="5 лет" required/>\
+      <label for="period">Период занятости<b style ="color: red">*</b></label>\
+      </p>\
+      <p class="poluch">\
+      <input type="text" name="poluch" value="Спортивный разряд" />\
+      <label for="poluch">Полученное достижение</label>\
+      </p>\
+      <p class="dob">\
+      <button type="button" id="btnAddForm" onclick="add_fields();">Добавить достижение</button>\
+      </p>\
+      </div>';
+
+      objTo.appendChild(divtest)
+  }
+  </script>
   <style type="text/css">
+  body{
+    background: url("https://imgur.com/jIzsJAr.jpg");
+  }
+  #top {
+    width:80px;
+    height: 30px;
+    background:#f7f7f7;
+    text-align:center;
+    position:fixed;
+    bottom:20px;
+    right:40px;
+    cursor:pointer;
+    color:#333;
+    font-family:verdana;
+    font-size:15px;
+    border: 1px solid #1E90FF;
+    -webkit-birder-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 8px;
+    margin: 0 auto;
+    }
+html {
+scroll-behavior: smooth;
+}
   #container {
     padding: 1px;
   	margin: 0 auto;
@@ -12,23 +102,40 @@
   	-webkit-birder-radius: 6px;
   	-moz-border-radius: 6px;
   	 border-radius: 6px; }
-     input, select{
+     input, select, button{
 	border: solid 1px #CCCCCC;
 	margin-left: 10px;
 	padding: 4px;
 	outline: 0;
 	font: Verdana, Geneva, sans-serif;
 	width: 200px;
-	background: #F9F9F9;
 	-webkit-birder-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
   }
+  .send input:active {
+  background: #1E90FF;
+  color: #fff;
+}
   .send input {
 	width: 210px;
 	margin-bottom: 10px;
 	border: 7px solid #1E90FF;
 	font: Verdana, Geneva, sans-serif;
+  -webkit-birder-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  }
+
+  .dob button:active {
+  background: #8A2BE2;
+  color: #fff;
+}
+  .dob button{
+  width: 210px;
+  border: 7px solid #8A2BE2;
+  font: Verdana, Geneva, sans-serif;
   -webkit-birder-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 8px;
@@ -43,7 +150,6 @@
 .name input {
 	margin-top: 10px;
 }
-
 .period input {
 }
 
@@ -71,10 +177,11 @@
   </style>
   </head>
   <body>
-    <div id="header1"><img src="mintsifryi-rossii-logogray.png"
+    <span onclick="topFunction()" id="top" class="top">Вверх</span>
+    <div id="header1"><img src="C:\Users\Булочка\Desktop\mintsifryi-rossii-logogray.png"
       width="300" height="90"></div>
 
-    <div id="header2"><img style="margin-left: 210px;" src="WL7dUx2K_400x400.jpg"
+    <div id="header2"><img style="margin-left: 210px;" src="C:\Users\Булочка\Desktop\WL7dUx2K_400x400.jpg"
       width="90" height="90"></div>
 
       <div id="p"><p align="center" style="margin-bottom: 60px;"><font size="4" face="Arial">Добро пожаловать!
@@ -82,43 +189,64 @@
       внеучебной деятельности, которые ВУЗ будет использовать для построения
       Вашей ИОТ</font></p></div>
       <div id="container" >
-      <form class="mainform" onsubmit="alert('Данные успешно отправлены!');return false">
+      <form class="mainform" name="forma" onsubmit="alert('Данные успешно отправлены!');return false">
   			  <p class="name">
-            <input type="text" name="name" value="Иванов Иван Иванович" onblur="if(this.value.length == 0) this.value = 'Иванов Иван Иванович'" onfocus="if(this.value == 'Иванов Иван Иванович') this.value = '' "/>
+            <input type="text" name="name" value="Иванов Иван Иванович"
+            onblur="if(this.value.length == 0) this.value = 'Иванов Иван Иванович'"
+            onfocus="if(this.value == 'Иванов Иван Иванович') this.value = '' "
+            required pattern="^[А-Яа-яЁё\s]+$"/>
        				    <label for="name">Ваше ФИО<b style ="color: red">*</b></label>
     			</p>
 
    			 <p class="date">
-    				<input type="date" name="date">
+    				<input type="date" name="date" required>
         			 	 <label for="date" >Дата Вашего Рождения<b style ="color: red">*</b></label>
          </p>
+     			 <p class="send" >
+      				<input type="submit" value="Отправить"  />
+     			 </p>
+           <p style="	margin-left: 10px;">Ваши достижения:</p>
          <p class="napr">
          <select required="required">
            <option selected disabled>Направление деятельности</option>
-           <option>Пункт 1</option>
-           <option>Пункт 2</option>
+           <option>Социально-гуманитарная</option>
+           <option>Естественнонаучная</option>
+           <option>Художественная</option>
+           <option>Физкультурно-спортивная</option>
+           <option>Туристско-краеведческая</option>
+           <option>Техническая</option>
          </select>
          <label for="napr">Направление деятельности <b style ="color: red">*</b></label>
          </p>
          <p class="vid">
          <select required="required">
            <option selected disabled>Вид деятельности</option>
-           <option>Пункт 1</option>
-           <option>Пункт 2</option>
+           <option>Секция</option>
+           <option>Кружок</option>
+           <option>Факультатив</option>
+           <option>Конференция</option>
+           <option>Школьное научное сообщество</option>
+           <option>Олимпиада</option>
+           <option>Соревнование, состязание, научная игра</option>
+           <option>Поисковые и научные исследования</option>
+           <option>Общественно полезные практики</option>
+           <option>Онлайн-курсы</option>
+           <option>Клуб (военно-патриотический клуб, например)</option>
+           <option>Творческое объединение (ансамбль, творческий коллектив и прочее)</option>
          </select>
          <label for="vid">Вид деятельности <b style ="color: red">*</b></label>
          </p>
          <p class="period">
-           <input type="text" name="period" value="5 лет" onblur="if(this.value.length == 0) this.value = '5 лет'" onfocus="if(this.value == '5 лет') this.value = '' "/>
+           <input type="text" name="period" value="5 лет" onblur="if(this.value.length == 0) this.value = '5 лет'" onfocus="if(this.value == '5 лет') this.value = '' " required/>
                  <label for="period">Период занятости<b style ="color: red">*</b></label>
          </p>
          <p class="poluch">
            <input type="text" name="poluch" value="Спортивный разряд" onblur="if(this.value.length == 0) this.value = 'Спортивный разряд'" onfocus="if(this.value == 'Спортивный разряд') this.value = '' "/>
                  <label for="poluch">Полученное достижение</label>
          </p>
-   			 <p class="send" >
-    				<input type="submit" value="Отправить"  />
-   			 </p>
+         <p class="dob">
+         <button type="button" id="btnAddForm" onclick="add_fields();">Добавить достижение</button>
+       </p>
 </form>
 </div>
  </body>
