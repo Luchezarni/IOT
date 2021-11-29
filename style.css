@@ -30,7 +30,7 @@ scroll-behavior: smooth;
   	-webkit-birder-radius: 6px;
   	-moz-border-radius: 6px;
   	 border-radius: 6px; }
-     input, select, button{
+     input, select, button, textarea{
 	border: solid 1px #CCCCCC;
 	margin-left: 10px;
 	padding: 4px;
