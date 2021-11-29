@@ -27,7 +27,7 @@
       var objTo = document.getElementById('container')
       var divtest = document.createElement("div");
       divtest.innerHTML = '<div><p style="margin-left: 10px;">Достижение ' + dost +':</p><p class="napr">\<select required="required">\
-      <option selected disabled>Направление деятельности</option>\
+      <option></option>\
       <option>Социально-гуманитарная</option>\
       <option>Естественнонаучная</option>\
       <option>Художественная</option>\
@@ -38,7 +38,7 @@
       </p>\
       <p class="vid">\
       <select required="required">\
-        <option selected disabled>Вид деятельности</option>\
+        <option></option>\
         <option>Секция</option>\
         <option>Кружок</option>\
         <option>Факультатив</option>\
@@ -55,11 +55,11 @@
       <label for="vid">Вид деятельности <b style ="color: red">*</b></label>\
       </p>\
       <p class="period">\
-      <input type="text" name="period" value="5 лет" required/>\
+      <input type="text" name="period" placeholder="5 лет" required/>\
       <label for="period">Период занятости<b style ="color: red">*</b></label>\
       </p>\
       <p class="poluch">\
-      <input type="text" name="poluch" value="Спортивный разряд" />\
+      <textarea name="poluch" placeholder="Спортивный разряд"></textarea>\
       <label for="poluch">Полученное достижение</label>\
       </p>\
       <p class="dob">\
