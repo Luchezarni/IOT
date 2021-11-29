@@ -86,9 +86,7 @@
       <div id="container" >
       <form class="mainform" name="forma" onsubmit="alert('Данные успешно отправлены!');return false">
   			  <p class="name">
-            <input type="text" name="name" value="Иванов Иван Иванович"
-            onblur="if(this.value.length == 0) this.value = 'Иванов Иван Иванович'"
-            onfocus="if(this.value == 'Иванов Иван Иванович') this.value = '' "
+            <input type="text" name="name" placeholder="Иванов Иван Иванович" autofocus
             required pattern="^[А-Яа-яЁё\s]+$"/>
        				    <label for="name">Ваше ФИО<b style ="color: red">*</b></label>
     			</p>
@@ -103,7 +101,7 @@
            <p style="	margin-left: 10px;">Ваши достижения:</p>
          <p class="napr">
          <select required="required">
-           <option selected disabled>Направление деятельности</option>
+           <option></option>
            <option>Социально-гуманитарная</option>
            <option>Естественнонаучная</option>
            <option>Художественная</option>
@@ -114,8 +112,8 @@
          <label for="napr">Направление деятельности <b style ="color: red">*</b></label>
          </p>
          <p class="vid">
-         <select required="required">
-           <option selected disabled>Вид деятельности</option>
+         <select required>
+           <option></option>
            <option>Секция</option>
            <option>Кружок</option>
            <option>Факультатив</option>
@@ -132,11 +130,11 @@
          <label for="vid">Вид деятельности <b style ="color: red">*</b></label>
          </p>
          <p class="period">
-           <input type="text" name="period" value="5 лет" onblur="if(this.value.length == 0) this.value = '5 лет'" onfocus="if(this.value == '5 лет') this.value = '' " required/>
+           <input type="text" name="period" placeholder="5 лет" required/>
                  <label for="period">Период занятости<b style ="color: red">*</b></label>
          </p>
          <p class="poluch">
-           <input type="text" name="poluch" value="Спортивный разряд" onblur="if(this.value.length == 0) this.value = 'Спортивный разряд'" onfocus="if(this.value == 'Спортивный разряд') this.value = '' "/>
+           <textarea name="poluch" placeholder="Спортивный разряд"></textarea>
                  <label for="poluch">Полученное достижение</label>
          </p>
          <p class="dob">
